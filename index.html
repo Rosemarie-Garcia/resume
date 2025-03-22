@@ -20,7 +20,9 @@
         }
         .resume {
             display: flex;
-            width: 800px;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
             background-color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -28,7 +30,6 @@
         }
         .left-section {
             background-color: #e6f2d6;
-            width: 35%;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -54,16 +55,11 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        .personal-info table {
-            width: 100%;
-            border-spacing: 10px;
-        }
-        .personal-info td {
-            padding: 5px 0;
+        .personal-info div {
             font-size: 14px;
+            padding: 5px 0;
         }
         .right-section {
-            width: 65%;
             padding: 20px;
         }
         h1 {
@@ -88,6 +84,24 @@
             list-style-type: disc;
             padding-left: 20px;
         }
+
+        @media (min-width: 768px) {
+            .resume {
+                flex-direction: row;
+            }
+            .left-section {
+                width: 35%;
+            }
+            .right-section {
+                width: 65%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,15 +111,15 @@
         <img src="garcia.png" alt="Profile Picture">
         <div class="personal-info">
             <h3>PERSONAL INFORMATION</h3>
-            <div><strong>Date of Birth:</strong></div> <div>November 7, 2003</div>
-            <div><strong>Place of Birth:</strong></div> <div>San Pablo City, Laguna</div>
-            <div><strong>Age:</strong></div> <div>19</div>
-            <div><strong>Gender:</strong></div> <div>Female</div>
-            <div><strong>Civil Status:</strong></div> <div>Single</div>
-            <div><strong>Height:</strong></div> <div>4 ft. 9 in</div>
-            <div><strong>Weight:</strong></div> <div>38 kg</div>
-            <div><strong>Citizenship:</strong></div> <div>Filipino</div>
-            <div><strong>Religion:</strong></div> <div>Catholic</div>
+            <div><strong>Date of Birth:</strong> November 7, 2003</div>
+            <div><strong>Place of Birth:</strong> San Pablo City, Laguna</div>
+            <div><strong>Age:</strong> 19</div>
+            <div><strong>Gender:</strong> Female</div>
+            <div><strong>Civil Status:</strong> Single</div>
+            <div><strong>Height:</strong> 4 ft. 9 in</div>
+            <div><strong>Weight:</strong> 38 kg</div>
+            <div><strong>Citizenship:</strong> Filipino</div>
+            <div><strong>Religion:</strong> Catholic</div>
         </div>
     </div>
 
